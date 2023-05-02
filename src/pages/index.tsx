@@ -1,8 +1,3 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
-
 function wrapInArray(obj: string | string[]) {
   if (typeof obj === "string") {
     return console.log([obj])
@@ -10,10 +5,16 @@ function wrapInArray(obj: string | string[]) {
   return console.log('no')
 }
 
+function greet(person, date) {
+  console.log(`Hello ${person}, today is ${date}!`)
+}
+
+greet("Brendan")
+
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+      className={`flex min-h-screen flex-col items-center justify-between p-24`}
     >
       <div className="w-full font-mono text-sm">
         {wrapInArray('hey')}
