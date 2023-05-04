@@ -5,11 +5,23 @@ function wrapInArray(obj: string | string[]) {
   return console.log('no')
 }
 
-function greet(person, date) {
-  console.log(`Hello ${person}, today is ${date}!`)
+function greet(person?: string, date?: Date) {
+  let today = date ? date : new Date()
+  console.log(`Hello ${person}, today is ${today}!`)
 }
 
 greet("Brendan")
+
+interface Options {
+  width: number
+}
+
+function configure(x: Options | "auto") {
+  // 
+}
+
+configure({ width: 100 })
+configure("auto")
 
 export default function Home() {
   return (
